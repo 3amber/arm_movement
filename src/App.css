@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+body{
+  margin: 0;
+  font-family: "segoe UI", "roboto", "oxygen",
+   "ubuntu", "cantarell", "fira sans", "droid sans", "helvetica neue", 
+   sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   display: flex;
+}
+
+button{
+  padding: 5px;
+  margin: 10px;
+}
+
+span{
+  color: orange;
+}
+
+code{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+   monospace;
+}
