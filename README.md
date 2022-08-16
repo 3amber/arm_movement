@@ -23,10 +23,6 @@ We will download [Firmata](https://github.com/firmata/arduino) and [Arduino IDE]
 
  `for more troubleshooting instructions, please refer to` **[this](https://github.com/rwaldron/johnny-five/wiki/Getting-Started#prerequisites)**
 
-### Arduino Setup
-
-I used a Servo and Connected it to `pin 8` with `5V` of Power and `GND`.
-
 ### Starting the project
 
 Make sure you did the **Important Notice**
