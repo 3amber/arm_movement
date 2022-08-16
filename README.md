@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Robot Arm Movement
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Using Arduino UNO & Servo Motor Developed with React Javascript
 
-## Available Scripts
+## Server
 
-In the project directory, you can run:
+- Using `express` server & `johnny-five` to control the robot arm
+- `johnny-five` is a library for controlling the robot arm
 
-### `npm start`
+## Client
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Using `react` to render the UI
+- `react-speech-recognition` is a library for speech recognition
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Important Notice
 
-### `npm test`
+`NOTE: We need Arduino UNO and Arduino IDE to achieve this`
+We will download [Firmata](https://github.com/firmata/arduino) and [Arduino IDE](https://www.arduino.cc/en/software) and for the Arduino to run with the `johnny-five` library, we need to deploy `firmata` to the Arduino.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Open `Arduino IDE`
+2. Create example Sketch from Files > Examples > StandardFirmataPlus
+3. Upload the sketch to the Arduino
 
-### `npm run build`
+ `for more troubleshooting instructions, please refer to` **[this](https://github.com/rwaldron/johnny-five/wiki/Getting-Started#prerequisites)**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Arduino Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I used a Servo and Connected it to `pin 8` with `5V` of Power and `GND`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Starting the project
 
-### `npm run eject`
+Make sure you did the **Important Notice**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Server-Side
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd server
+yarn
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Client-Side
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd client
+yarn
+yarn start
+```
 
-## Learn More
+### Walk-through
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Open `Visual Studio Code` or any other text editor.
+2. Start using two terminals (`server` & `client`)
+3. Install Dependencies using `yarn` on both terminals
+4. Plug up your Arduino you should receive a message saying
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```py
+ #Timestamp#    #Status#           #Port#
+1660235534040   Available   /dev/tty.usbserial-110
+1660235534043   Connected   /dev/tty.usbserial-110
+```
 
-### Code Splitting
+5. Start up the project using `yarn start` on the server terminal and `yarn start` on the client terminal
+6. Open `http://localhost:3000` in the browser if didn't opened automatically
+7. Test server connection by opening `http://localhost:4000/` in the browser and receive `I am alive` response
+8. You're good to go!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Troubleshooting
 
-### Analyzing the Bundle Size
+If you have a problem with node/npm/yarn, try to identify the problem and fix it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Common Problems:
 
-### Making a Progressive Web App
+- Versioning Problems, keep everything up to date, download the latest version of [Node.js LTS](https://nodejs.org) and [Yarn](https://yarnpkg.com)
+- What is `yarn`? yarn is a package manager for the JavaScript programming language. It is a tool for managing dependencies. to Download `yarn` run `npm i -g yarn` and you're good to go.
+- Arduino Problems? Which problem? did you upload the Firmata sketch to the Arduino? If you did, try to upload the sketch again. If you still have problems, try to reset the Arduino. Press and hold the button for maybe 11 seconds or so. if the problem persist check the ports and make sure you have the correct Arduino connected. and to the same port as identified or for MacBook/Linux Users in the terminal, run `ls /dev/tty.*` to see which port is connected. for Windows Users, run `devmgmt.msc` and select `Serial Ports` to see which port is connected. Try to remove the port from `johnny-five Board` and then try to reconnect. Make sure to connect USB2.0 with a USB2.0 Serial.
+- Everything is working except the Servo is not moving! What is wrong? check the `Servo` pin number in the `johnny-five Servo` and make sure it is correct.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Saif Abbas "3amber"

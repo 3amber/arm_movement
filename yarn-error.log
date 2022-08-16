@@ -1,0 +1,64 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\3amber\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17\bin;C:\msys64\mingw64\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\3amber\AppData\Local\Microsoft\WindowsApps;;C:\Users\3amber\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\bin;;C:\Users\3amber\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EBUSY: resource busy or locked, copyfile 'C:\Users\3amber\AppData\Local\Yarn\Cache\v6\npm-@babel-helper-validator-option-7.18.6-bf0d2b5a509b1f336099e4ff36e1a63aa5db4db8-integrity\node_modules\@babel\helper-validator-option\LICENSE' -> 'C:\Users\3amber\.vscode\arm_movement\node_modules\@babel\helper-validator-option\LICENSE'
+
+npm manifest: 
+  {
+    "name": "arm_movement",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.16.5",
+      "@testing-library/react": "^13.3.0",
+      "@testing-library/user-event": "^13.5.0",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-scripts": "5.0.1",
+      "react-speech-recognition": "^3.9.1",
+      "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
